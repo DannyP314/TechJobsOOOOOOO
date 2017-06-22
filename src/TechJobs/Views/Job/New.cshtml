@@ -14,7 +14,24 @@
 
     @{ 
         // TODO #5 - Create <select> dropdowns for other job fields (outside of this @{ } block)
+        // again copied what was there for the Employer select option. This is the one where my dropdowns don't look like theirs but I couldnt figure out what my issue was
+        // these are being passed in from the lists made by #4
     }
+
+    <div class="form-group">
+        <label asp-for="LocationsID"></label>
+        <select asp-for="LocationsID" asp-items="Model.Locations"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CoreCompetenciesID">Core Competencies</label>
+        <select asp-for="CoreCompetenciesID" asp-items="Model.CoreCompetencies"></select>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="PositionTypesID">Position Types</label>
+        <select asp-for="PositionTypesID" asp-items="Model.PositionTypes"></select>
+    </div>
 
     <input type="submit" value="Add Job" />
 </form>

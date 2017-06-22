@@ -1,39 +1,30 @@
 ﻿@model TechJobs.ViewModels.SearchJobsViewModel
-
 <h1>@Model.Title</h1>
-
 <form action="/Search/Results">
     <p>
         @foreach (var column in Model.Columns)
-        { 
+        {
             var checkedColumn = column.Equals(Model.Column);
-
             <span>
                 <input type="radio"
                        name="Column"
                        id="@column"
-                       value="@column" 
-                       checked="@checkedColumn"/>
+                       value="@column"
+                       checked="@checkedColumn" />
                 <label for="@column">@column</label>
             </span>
         }
     </p>
-
     <p>
         <label asp-for="Value"></label>
         <input asp-for="Value" />
     </p>
-
     <input type="submit" value="Search" />
 </form>
-
 <hr />
-
 @if (Model.Jobs != null)
 {
-
     <h3>@Model.Jobs.Count Result(s)</h3>
-
     @foreach (var job in Model.Jobs)
     {
         <table class="job-listing">
@@ -60,3 +51,4 @@
         </table>
     }
 }
+Add Comment Collaps
